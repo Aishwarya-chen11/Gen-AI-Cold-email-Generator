@@ -31,17 +31,25 @@ Services firms win when they demonstrate **relevance** fast. Job posts are publi
 
 ## How it works (architecture & flow)
 
-```mermaid
 flowchart LR
-  A[Job/Careers Page URL] -->|LangChain WebBaseLoader| B[Raw page text]
-  B --> C[LLM (Groq Llama 3.1) → JSON {role, skills[], experience, description}]
-  C --> D[ChromaDB semantic search over portfolio]
-  D --> E[Top-K portfolio links + blurbs]
+  A[Job/Careers Page URL]
+  B[Raw page text]
+  C[LLM (Groq Llama 3.1): JSON fields — role, skills, experience, description]
+  D[ChromaDB: semantic search over portfolio]
+  E[Top-K portfolio links + blurbs]
+  F[Email Prompt Template (LangChain)]
+  G[Groq LLM: final cold email]
+  H[Streamlit UI (copy / refine / save)]
+
+  A -->|LangChain WebBaseLoader| B
+  B --> C
+  C --> D
+  D --> E
   C --> F
-  E --> F[Email Prompt Template (LangChain)]
-  F --> G[Groq LLM → Final cold email]
-  G --> H[Streamlit UI (copy/refine/send)]
-```
+  E --> F
+  F --> G
+  G --> H
+
 
 **Notes**
 
