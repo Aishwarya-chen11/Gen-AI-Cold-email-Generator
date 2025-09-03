@@ -1,7 +1,3 @@
-Awesome—here’s your **updated project write-up** that keeps all earlier points intact and folds in details from the attached notebooks (`tutorial_groq.ipynb`, `tutorial_chromadb.ipynb`, `email_generator.ipynb`) plus authoritative references.
-
----
-
 # 📧 Cold Mail Generator — Project Overview (Groq + LangChain + ChromaDB + Streamlit)
 
 ## What this project does (in one breath)
