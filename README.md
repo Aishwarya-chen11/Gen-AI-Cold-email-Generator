@@ -41,16 +41,6 @@ flowchart LR
   G[Groq LLM: final cold email]
   H[Streamlit UI (copy / refine / save)]
 
-  A -->|LangChain WebBaseLoader| B
-  B --> C
-  C --> D
-  D --> E
-  C --> F
-  E --> F
-  F --> G
-  G --> H
-
-
 **Notes**
 
 * One LLM used **twice** (extract → write) keeps the logic composable and debuggable.
